@@ -8,7 +8,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class TicketDetailsService {
     private final JdbcTemplate jdbctemplateTrainDet;
-    public Map<String, Object> TrainAttributes(String ticketID) {
+    public Map<String, Object> TicketAttributes(Integer ticketID) {
         return jdbctemplateTrainDet.queryForMap("select * from ticket where ticketID=?", ticketID);
     }
 }

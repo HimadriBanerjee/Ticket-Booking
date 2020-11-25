@@ -13,6 +13,13 @@ public abstract class Passenger {
     private long idCard;
     private long contact;
     private PassengerType PassengerType;
+    public Passenger(String name,Integer age,String address,Long contact,Long idCard){
+        this.name=name;
+        this.age=age;
+        this.address=address;
+        this.contact=contact;
+        this.idCard = idCard;
+    }
    /* public String getAddress(){return  address;}
     public void setAddress(String address){this.address=address;}
     public String getName(){return name;}

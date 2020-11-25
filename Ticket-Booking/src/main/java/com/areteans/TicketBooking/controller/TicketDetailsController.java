@@ -18,8 +18,4 @@ public class TicketDetailsController {
     public Map<String, Object> GetTicketAttributes(@RequestParam(value = "ticketID")Integer ticketID){
         return this.ticketDetailsService.TicketAttributes(ticketID);
     }
-    @GetMapping(path = "train")
-    public Map<String, Object> GetTrainDetails(@RequestParam(value = "trainID")String trainID){
-        return this.trainService.TrainAttributes(trainID);
-    }
 }

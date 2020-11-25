@@ -5,19 +5,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import javax.persistence.*;
 @Entity
-@Table(name = "passenger")
+@Table(name = "train")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class PassengerJPA {
+public class TrainJPA {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String name;
-    private int age;
-    private String address;
-    private long idCard;
-    private long contact;
-    public PassengerJPA(String name, int contact, String address, int age, long idCard) {
-    }
+    private Long trainID;
+    private String trainName;
 }

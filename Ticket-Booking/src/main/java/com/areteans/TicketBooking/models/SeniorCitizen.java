@@ -1,4 +1,5 @@
 package com.areteans.TicketBooking.models;
+import com.areteans.TicketBooking.enums.PassengerType;
 import lombok.Getter;
 import lombok.Setter;
 @Getter
