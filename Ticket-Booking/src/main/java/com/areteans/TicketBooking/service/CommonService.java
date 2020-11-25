@@ -39,9 +39,10 @@ public class CommonService {
                 passenger.getPassengerType());
         return passenger;
     }
-        @Transactional
+    @Transactional
     public Map<String, Object> createPassengerJPA(Map<String, Object> passengerJPA) {
         PassengerJPA passenger = new PassengerJPA(
+                null,
                 String.valueOf(passengerJPA.get("name")),
                 (int) Long.parseLong(String.valueOf(passengerJPA.get("contact"))),
                 String.valueOf(passengerJPA.get("address")),

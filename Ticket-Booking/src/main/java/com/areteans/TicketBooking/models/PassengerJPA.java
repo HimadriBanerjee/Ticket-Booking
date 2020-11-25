@@ -1,4 +1,5 @@
 package com.areteans.TicketBooking.models;
+import com.areteans.TicketBooking.enums.PassengerType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,11 +14,13 @@ import javax.persistence.*;
 public class PassengerJPA {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long passengerid;
     private String name;
     private int age;
     private String address;
     private long idCard;
     private long contact;
-    public PassengerJPA(String name, int contact, String address, int age, long idCard) {
-    }
+
+    //public PassengerJPA(Long passengerid,String name, int contact, String address, int age, long idCard) {
+   // }
 }
