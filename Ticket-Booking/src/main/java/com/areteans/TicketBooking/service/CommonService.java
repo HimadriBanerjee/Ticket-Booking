@@ -47,8 +47,7 @@ public class CommonService {
                 (int) Long.parseLong(String.valueOf(passengerJPA.get("contact"))),
                 String.valueOf(passengerJPA.get("address")),
                 Integer.parseInt(String.valueOf(passengerJPA.get("age"))),
-                Long.parseLong(String.valueOf(passengerJPA.get("idCard")))
-        );
+                Long.parseLong(String.valueOf(passengerJPA.get("idCard"))));
         PassengerJPA passenger1 = passengerRepository.save(passenger);
         passenger1.setAge(13);
         passengerRepository.save(passenger1);

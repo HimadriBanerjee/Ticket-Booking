@@ -21,9 +21,9 @@ public class TrainService {
         return trainRepository.save(trainJPA);
     }
     public TrainJPA getTrainByID(Long ID) {
-        Optional<TrainJPA> emp = trainRepository.findById(ID);
-        if (emp.isPresent()) {
-            return emp.get();
+        Optional<TrainJPA> train = trainRepository.findById(ID);
+        if (train.isPresent()) {
+            return train.get();
         }
         return null;
     }
