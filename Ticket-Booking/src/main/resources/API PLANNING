@@ -1,0 +1,36 @@
+SAVING PASSENGER DETAILS
+SAVING CHILD(PASSENGER) DETAILS IN DIFFERENT TABLE
+BOOKING TICKET
+CANCELLING TICKET
+ENQURING TICKET
+                        CONTROLLERS->
+                        TicketBook Controller
+                        TicketDelete Controller
+                        TicketDetails Controller
+                        Child Controller
+
+
+                        SERVICES->
+                        Child Service
+                        Common Service
+                        Train Service
+                        Station Service
+                        TicketDelete Service
+                        TicketDetails Service
+                        Ticket Service
+
+                        MODELS->
+                        Passenger
+                        Child
+                        Ticket
+                        Train
+                        Station
+                        JPA's: PassengerJPA
+                               TrainJPA
+
+
+
+                        REPOSITORIES->
+                        Passenger Repository
+                        Train Repository
+
