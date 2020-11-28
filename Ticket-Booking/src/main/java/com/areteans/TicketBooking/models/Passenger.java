@@ -6,7 +6,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public abstract class Passenger {
+public class Passenger {
     private String name;
     private  int age;
     private String address;

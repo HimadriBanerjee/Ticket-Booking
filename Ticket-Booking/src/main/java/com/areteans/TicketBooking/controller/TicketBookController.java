@@ -1,4 +1,5 @@
 package com.areteans.TicketBooking.controller;
+import com.areteans.TicketBooking.models.Ticket;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,4 +31,13 @@ public class TicketBookController {
         @PostMapping(path = "station", consumes = MediaType.APPLICATION_JSON_VALUE)
         public Map<String, Object> stationDetail (@RequestBody Map < String, Object > station){
             return stationService.save(station);}
+    @PostMapping(path = "nestedticket", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public Ticket createBoardingPass(@RequestBody Ticket ticket) {
+        return commonService.create(ticket);
     }
+    @PostMapping(path = "create", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public Map<String, Object> createPassenger(@RequestBody Map<String, Object> passengerJPA) {
+        return commonService.createPassengerJPA(passengerJPA);
+    }
+
+}
