@@ -9,12 +9,12 @@ import java.util.Map;
 @RequestMapping(path = "Delete")
 public class TicketDeleteController {
     private final TicketDeleteService ticketDeleteService;
-
+@CrossOrigin
     @DeleteMapping(value = "ticket/{ticketID}")
     public void TicketDelete(@PathVariable("ticketID") Integer ticketID) {
         ticketDeleteService.deleteTicket(ticketID);
     }
-
+@CrossOrigin
     @DeleteMapping(path = "passenger")
     public void PassengerDelete(@RequestParam(value = "passengerid") Integer passengerid) {
         this.ticketDeleteService.deleteCommonService(passengerid);

@@ -18,8 +18,6 @@ public class CommonService {
     private final GeneralService generalService;
     private final PassengerRepository passengerRepository;
     private final JdbcTemplate jdbcTemplateForCreate;
-    private Object Passenger;
-
     public Map<String, Object> save(Map<String, Object> Passenger) {
         switch (PassengerType.valueOf(String.valueOf(Passenger.get("PassengerType")))) {
             case CHILD:
