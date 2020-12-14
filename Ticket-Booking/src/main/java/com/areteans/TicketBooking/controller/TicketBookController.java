@@ -23,11 +23,11 @@ public class TicketBookController {
         @CrossOrigin
     @PostMapping(path = "ticket", consumes = MediaType.APPLICATION_JSON_VALUE)
     public Map<String, Object> ticketDetail(@RequestBody Map<String, Object> ticket) {
-        return ticketService.save(ticket);}
+        return ticketService.saveT(ticket);}
         @CrossOrigin
         @PostMapping(path = "passenger", consumes = MediaType.APPLICATION_JSON_VALUE)
         public Map<String, Object> passengerDetail (@RequestBody Map < String, Object > passenger){
-            return commonService.save(passenger);}
+            return commonService.saveCom(passenger);}
             @CrossOrigin
         @PostMapping(path = "station", consumes = MediaType.APPLICATION_JSON_VALUE)
         public Map<String, Object> stationDetail (@RequestBody Map < String, Object > station){
@@ -42,5 +42,4 @@ public class TicketBookController {
     public Map<String, Object> createPassenger(@RequestBody Map<String, Object> passengerJPA) {
         return commonService.createPassengerJPA(passengerJPA);
     }
-
 }

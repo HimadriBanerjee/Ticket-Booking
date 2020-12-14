@@ -7,14 +7,15 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class TicketService {
     private final JdbcTemplate jdbcTemplateOfTicket;
-    public Map<String, Object> save(Map<String, Object> ticket) {
-        Map<String, Object> tiMap = jdbcTemplateOfTicket.queryForMap("insert into ticket(ticketID,status,trainID,stationID_D,stationID_A,berthnumber,DepartureTime) values(?,?,?,?,?,?,?) RETURNING ticketID",
-                Integer.parseInt((String) ticket.get("ticketID")),
-                Integer.parseInt((String) ticket.get("trainID")),
-                Integer.parseInt((String) ticket.get("stationD_D")),
-                Integer.parseInt((String) ticket.get("stationD_A")),
-                Integer.parseInt((String) ticket.get("berthnumber")),
-                Integer.parseInt((String) ticket.get("DepartureTime")));
+    public Map<String, Object> saveT(Map<String, Object> ticket) {
+        Map<String, Object> tiMap = jdbcTemplateOfTicket.queryForMap("insert into ticket(status,trainID,stationID_D,stationID_A,berthnumber) values(?,?,?,?,?) RETURNING ticketID",
+             //   Integer.parseInt((String) ticket.get("ticketID")),
+                ticket.get("status"),
+                Long.parseLong((String) ticket.get("trainID")),
+                Long.parseLong((String) ticket.get("stationID_D")),
+                Long.parseLong((String) ticket.get("stationID_A")),
+                Integer.parseInt((String) ticket.get("berthnumber")));
+              //  Integer.parseInt((String) ticket.get("DepartureTime")));
                  ticket.put("ticketID" ,tiMap.get("ticketID"));
                   return ticket;
     }

@@ -7,7 +7,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class GeneralService {
     private final JdbcTemplate jdbcTemplate;
-    public Map<String, Object> save(Map<String, Object> passenger) {
+    public Map<String, Object> saveG(Map<String, Object> passenger) {
         Map<String, Object> gMap = jdbcTemplate.queryForMap("insert into passenger(idCard,name,age,address,contact,PassengerType) values(?,?,?,?,?,?) RETURNING passengerid",
                 Long.parseLong((String) passenger.get("idCard")),
                 passenger.get("name"),

@@ -7,7 +7,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class ChildService {
     private final JdbcTemplate jdbcTemplate;
-    public Map<String, Object> save(Map<String, Object> child) {
+    public Map<String, Object> saveC(Map<String, Object> child) {
         Map<String, Object> cMap = jdbcTemplate.queryForMap("insert into Child(idCard,guardian) values(?,?) RETURNING idCard",
                 Long.parseLong((String) child.get("idCard")),
               // child.get("name"),
