@@ -7,21 +7,21 @@ import java.sql.Time;
 @Setter
 @AllArgsConstructor
 public class Ticket {
-    private long ticketID;
+    private Long ticketID;
     private String status;
-    private long trainID;
-    private long stationID_D;
-    private long sationID_A;
-    private int berthnumber;
-    Time DepartureTime;
+    private Long trainID;
+    private Long stationID_D;
+    private Long stationID_A;
+    private Integer berthnumber;
+   // Time DepartureTime;
     private Passenger passenger;
-    public Ticket(Long ticketID, String status, Long trainID, Long stationID_D, Long stationID_A, Integer berthnumber, Time DepartureTime) {
+    public Ticket(Long ticketID, String status, Long trainID, Long stationID_D, Long stationID_A, Integer berthnumber) {
         this.ticketID = ticketID;
         this.status = status;
         this.trainID = trainID;
         this.stationID_D = stationID_D;
-        this.sationID_A = stationID_A;
+        this.stationID_A = stationID_A;
         this.berthnumber = berthnumber;
-        this.DepartureTime = DepartureTime;
+       // this.DepartureTime = DepartureTime;
     }
 }

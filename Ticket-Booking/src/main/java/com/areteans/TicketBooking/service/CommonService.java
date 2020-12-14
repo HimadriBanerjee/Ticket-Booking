@@ -18,14 +18,14 @@ public class CommonService {
     private final GeneralService generalService;
     private final PassengerRepository passengerRepository;
     private final JdbcTemplate jdbcTemplateForCreate;
-    public Map<String, Object> save(Map<String, Object> Passenger) {
+    public Map<String, Object> saveCom(Map<String, Object> Passenger) {
         switch (PassengerType.valueOf(String.valueOf(Passenger.get("PassengerType")))) {
             case CHILD:
-                return childService.save(Passenger);
+                return childService.saveC(Passenger);
             case SENIOR_CITIZEN:
-                return seniorCitizenService.save(Passenger);
+                return seniorCitizenService.saveS(Passenger);
             case GENERAL:
-                return generalService.save(Passenger);
+                return generalService.saveG(Passenger);
             default:
                 return null;
         }
@@ -42,9 +42,9 @@ public class CommonService {
                 ticket.getStatus(),
                 ticket.getTrainID(),
                 ticket.getStationID_D(),
-                ticket.getSationID_A(),
-                ticket.getBerthnumber(),
-                ticket.getDepartureTime());
+                ticket.getStationID_A(),
+                ticket.getBerthnumber());
+               // ticket.getDepartureTime());
                 mapx.get("passengerid");
         return ticket;
     }
